@@ -3,35 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Stressed Brain</title>
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <title>The Stressed Mindscape | All My Links</title>
+    <style>
+        /* Base Styling and Background */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Start from the top */
+            min-height: 100vh;
+            color: white;
+            /* Blue Gradient Background */
+            background: linear-gradient(180deg, #4c6bff 0%, #1a2a47 100%);
+            padding-top: 50px; /* Space from the top */
+        }
+
+        /* Main Container for the Profile and Links */
+        .container {
+            width: 100%;
+            max-width: 450px; /* Max width for a mobile-centric design */
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        /* Profile Image */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Makes it a circle */
+            object-fit: cover;
+            border: 4px solid white; /* Optional: White border around the image */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        /* Social Handle Text */
+        .social-handle {
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        /* Link Button Styling */
+        .link-button {
+            display: block; /* Makes the anchor tag fill the width */
+            background-color: white;
+            color: #1a2a47; /* Dark text color */
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 600;
+            padding: 15px 20px;
+            margin-bottom: 20px; /* Space between buttons */
+            border-radius: 30px; /* Rounded pill shape */
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Optional: Add a slight inner gradient to mimic the image's buttons */
+            background-image: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+        }
+
+        /* Hover Effect for Buttons */
+        .link-button:hover {
+            transform: translateY(-2px); /* Slight lift */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-image: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to a Stressed Brain</h1>
-        <nav>
-            <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>About This Page</h2>
-            <p>Projects to disuade existential dread</p>
-            <img src="image.jpg" alt="A descriptive image">
-        </section>
-        <article>
-            <h3>A Blog Post</h3>
-            <p>Another paragraph for some content.</p
-        </article>
-    </main>
+    <div class="container">
 
-    <footer>
-        <p>&copy; 2025 Vineet Jose</p>
-    </footer>
+        <img class="profile-img" src="Pro2.jpg" alt="Your Profile Picture">
 
-    <!-- Link to your JavaScript file (usually at the end of body) -->
-    <script src="script.js"></script>
+        <p class="social-handle">Vineet Jose</p>
+
+        <a class="link-button" href="https://share.google/2dBIaelmZzqEmOdKR" target="_blank" rel="noopener noreferrer">
+            💼 Professional Things - LinkedIn
+        </a>
+
+        <a class="link-button" href="https://linktr.ee/thestresspill?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAOiFShleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacKOt3BK5KOhF6Gd9RKQ08I-Ys2fz0K5QZaViXA9Uetka_saFki59-ibXPQDw_aem_4mLMKrD4WXqCQQOZCQwsFg" 
+        target="_blank" rel="noopener noreferrer">
+            🎧 Music Things - Published Music
+        </a>
+
+        <a class="link-button" href="#" target="_blank" rel="noopener noreferrer">
+            📈 Dashboard Obsession - Analytics Projects (WIP)
+        </a>
+
+        <a class="link-button" href="#" target="_blank" rel="noopener noreferrer">
+            🖍️ Doodle Art Gallery - (WIP)
+        </a>
+
+        <a class="link-button" href="#" target="_blank" rel="noopener noreferrer">
+            📝 Chatterbox - Blog (WIP)
+        </a>
+
+    </div>
+
 </body>
 </html>

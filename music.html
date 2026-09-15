@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Published Music | The Stressed Mindscape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+    <style>
+        :root {
+            --bg-top: #0f2027;
+            --bg-mid: #14384a;
+            --bg-bottom: #0b1c26;
+            --accent: #2ec4b6;
+            --card-bg: #12303f;
+            --card-border: rgba(46, 196, 182, 0.35);
+            --text-main: #f4f1ea;
+            --text-muted: #b9c6c9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: var(--text-main);
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%);
+            padding: 40px 0 60px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 460px;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        /* Hero cover card */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            padding: 32px 24px 26px;
+            margin-bottom: 16px;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(46, 196, 182, 0.35), transparent 55%),
+                radial-gradient(circle at 90% 80%, rgba(76, 107, 255, 0.3), transparent 55%),
+                linear-gradient(160deg, #123344 0%, #0a1e29 100%);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 {
+            font-size: 1.9em;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+        }
+
+        .hero p {
+            font-size: 0.85em;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .section-label {
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 28px 0 14px 4px;
+        }
+
+        /* Featured wide button (New Single at top, LinkTree at bottom) */
+        .featured-tile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #17475a 0%, #0e2733 100%);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 16px 18px;
+            border-radius: 16px;
+            border: 1px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .featured-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .featured-tile .icon {
+            font-size: 1.4em;
+            width: 1.4em;
+            text-align: center;
+        }
+
+        .featured-tile .label {
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        .featured-tile .sub {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Content tile grid */
+        .tile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .tile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 16px;
+            min-height: 64px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .tile:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .tile .icon {
+            font-size: 1.2em;
+            width: 1.2em;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .tile .label {
+            font-size: 0.88em;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        /* Compact social icon grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .social-tile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            font-size: 1.2em;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .social-tile:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a class="back-link" href="index.html">&larr; Back to Home</a>
+
+        <div class="hero">
+            <h1>Published Music</h1>
+            <p>The Stress Pill &mdash; everything, in one place.</p>
+        </div>
+
+        <a class="featured-tile" href="https://artists.landr.com/991043971962" target="_blank" rel="noopener noreferrer">
+            <span class="icon"><i class="fa-solid fa-music"></i></span>
+            <span>
+                <span class="label">New Single</span>
+                <span class="sub">Listen to the latest release</span>
+            </span>
+        </a>
+
+        <p class="section-label">Music</p>
+
+        <div class="tile-grid">
+
+            <a class="tile" href="https://thestresspill.bandcamp.com/album/hues" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-brands fa-bandcamp"></i></span>
+                <span class="label">My New EP &mdash; Hues</span>
+            </a>
+
+            <a class="tile" href="https://open.spotify.com/album/6d9VZWs6Yt12kjNN22kZXh" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-brands fa-spotify"></i></span>
+                <span class="label">The Stress Pill EP</span>
+            </a>
+
+            <a class="tile" href="https://www.youtube.com/channel/UCFVoqHdBLkQHlrerHNhiDRg" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-brands fa-youtube"></i></span>
+                <span class="label">YouTube Channel</span>
+            </a>
+
+            <a class="tile" href="https://soundcloud.com/vineet-jose" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-brands fa-soundcloud"></i></span>
+                <span class="label">Soundcloud</span>
+            </a>
+
+            <a class="tile" href="https://www.patreon.com/thestresspill" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-brands fa-patreon"></i></span>
+                <span class="label">Support the Project</span>
+            </a>
+
+            <a class="tile" href="https://www.buymeacoffee.com/thestresspill" target="_blank" rel="noopener noreferrer">
+                <span class="icon"><i class="fa-solid fa-mug-hot"></i></span>
+                <span class="label">Buy Vineet a Coffee</span>
+            </a>
+
+        </div>
+
+        <p class="section-label">Socials</p>
+
+        <div class="social-grid">
+            <a class="social-tile" href="https://www.facebook.com/thestresspill/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="social-tile" href="https://instagram.com/the_stresspill" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social-tile" href="https://open.spotify.com/artist/4TYUaRpR1FFjMSbX9ZPZRp" target="_blank" rel="noopener noreferrer" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a class="social-tile" href="https://www.youtube.com/channel/UCFVoqHdBLkQHlrerHNhiDRg" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="social-tile" href="https://soundcloud.com/vineet-jose" target="_blank" rel="noopener noreferrer" title="Soundcloud"><i class="fa-brands fa-soundcloud"></i></a>
+            <a class="social-tile" href="https://music.apple.com/in/artist/the-stress-pill/1630757862" target="_blank" rel="noopener noreferrer" title="Apple Music"><i class="fa-brands fa-apple"></i></a>
+            <a class="social-tile" href="https://www.linkedin.com/in/vineet-jose/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-tile" href="https://www.patreon.com/thestresspill" target="_blank" rel="noopener noreferrer" title="Patreon"><i class="fa-brands fa-patreon"></i></a>
+            <a class="social-tile" href="mailto:thestresspillproject@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a class="social-tile" href="https://thestresspill.bandcamp.com/" target="_blank" rel="noopener noreferrer" title="Bandcamp"><i class="fa-brands fa-bandcamp"></i></a>
+        </div>
+
+        <a class="featured-tile" href="https://linktr.ee/thestresspill" target="_blank" rel="noopener noreferrer" style="margin-top: 28px;">
+            <span class="icon"><i class="fa-solid fa-link"></i></span>
+            <span class="label">LinkTree</span>
+        </a>
+
+    </div>
+
+</body>
+</html>
